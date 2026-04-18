@@ -1,21 +1,56 @@
-# Dithermark
+# dither-cli
 
-An interactive, in-browser playground for image dithering and color quantization algorithms. Demo at [app.dithermark.com](https://app.dithermark.com).
+Node-based image and video dithering from the terminal — powered by dithermark's algorithms.
 
-## Running offline
+This repository packages a standalone CLI published as `@resciencelab/dither-cli`, with all CLI source under [`cli/`](./cli).
 
-Standalone desktop builds can be found [on the releases page.](https://github.com/allen-garvey/dithermark/releases).
+## Install
 
-## Documentation
+```bash
+npm i -g @resciencelab/dither-cli
+```
 
-* FAQ for *using* this project can be found at [dithermark.com/faq](https://dithermark.com/faq)
-* Documentation for building and local development can be found in `docs/building.md`
-* Guides for other common tasks, such as: creating a release build, setting up random images with Unsplash, and increasing the color count for color dithers can be found in the `docs` folder
+## Quick start
 
-## Known Limitations
+```bash
+# One-shot with a preset
+dither apply photo.jpg -o out.png --preset gameboy
 
-* During WebGL dithering the image is stored in a single texture. This means that if the size of the image is greater than the browser WebGL context parameter `MAX_TEXTURE_SIZE`, only the lower left corner of the image will be dithered.
+# Custom algorithm + palette + filters
+dither apply photo.jpg -o out.png   --mode color   --algorithm ordered--bayer-16   --colors 2   --custom-colors "#0047ab,#ffffff"   --color-comparison cie-lab
+
+# Batch processing
+dither batch "shots/*.jpg" -o dithered/ --preset newsprint --concurrency 4
+
+# Video (requires ffmpeg)
+dither video in.mp4 -o out.mp4 --preset comic-book --fps 24
+```
+
+## Showcase
+
+Source frame:
+
+![Source rotating station](./cli/examples/showcase/source-rotating-station.png)
+
+20 example looks generated from the same frame:
+
+![20 result contact sheet](./cli/examples/showcase/contact-sheet.png)
+
+## What's in this repo
+
+- `cli/` — npm package source, commands, presets, vendored dithermark worker/shared modules
+- `.github/workflows/publish-cli.yml` — tag-driven npm publish workflow for `cli-v*`
+- `.archive/2026-04-18/dither-cli-launch.md` — launch/archive notes
+
+## CLI features
+
+- Large frontend-aligned algorithm surface, including ordered, diffusion, threshold, arithmetic, random, and simplex variants
+- Palette-based color dithering with multiple color comparison modes
+- Core image controls exposed in CLI and JSON config: brightness, contrast, saturation, hue rotation, pixelate, blur, sharpen, custom BW replacement colors
+- Image, batch, and video pipelines
+
+For the full CLI documentation, presets, and the 20-example recipe table, see [cli/README.md](./cli/README.md).
 
 ## License
 
-Dithermark is released under the MIT License. See license.txt for more details.
+MIT
