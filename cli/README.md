@@ -73,6 +73,35 @@ Source image: `2001太空漫游-旋转空间站.png`
 | 19 | ![19](./examples/showcase/19-blur-hl-dot.png) | `--mode color --algorithm ordered--dot-8--hl --palette lilac --colors 6 --color-comparison weighted-hsl --blur-before 0.8 --blur-after 0.3` |
 | 20 | ![20](./examples/showcase/20-sharp-burkes-metal.png) | `--mode color --algorithm burkes --custom-colors "#0d1b2a,#415a77,#e0e1dd,#c1121f,#ffd166" --colors 5 --color-comparison cie-xyz --sharpen-before 1.8 --contrast 125` |
 
+## Logo experiments
+
+Source logo: `resciencelab-logo.png`
+
+### Source
+
+![Source logo](./examples/logo-showcase/source-logo.png)
+
+### 12-result contact sheet
+
+![Logo contact sheet](./examples/logo-showcase/contact-sheet.png)
+
+### Logo recipes
+
+| # | Output | Recipe |
+|---|---|---|
+| 01 | ![L01](./examples/logo-showcase/01-gameboy.png) | `--preset gameboy` |
+| 02 | ![L02](./examples/logo-showcase/02-mac-classic.png) | `--preset mac-classic` |
+| 03 | ![L03](./examples/logo-showcase/03-neon.png) | `--preset neon` |
+| 04 | ![L04](./examples/logo-showcase/04-risograph.png) | `--preset risograph` |
+| 05 | ![L05](./examples/logo-showcase/05-newsprint.png) | `--preset newsprint` |
+| 06 | ![L06](./examples/logo-showcase/06-bluewhite-bayer16.png) | `--mode color --algorithm ordered--bayer-16 --colors 2 --custom-colors "#0047ab,#ffffff" --color-comparison cie-lab` |
+| 07 | ![L07](./examples/logo-showcase/07-brand-duotone.png) | `--mode bw --algorithm floyd-steinberg --black-color "#0057ff" --white-color "#111111" --contrast 130` |
+| 08 | ![L08](./examples/logo-showcase/08-zx-spectrum.png) | `--mode color --algorithm ordered--bayer-2 --custom-colors "#000000,#0000d7,#d70000,#d700d7,#00d700,#00d7d7,#d7d700,#d7d7d7" --colors 8 --color-comparison hue` |
+| 09 | ![L09](./examples/logo-showcase/09-sepia-dot.png) | `--mode color --algorithm ordered--dot-8 --palette sepia --colors 6 --color-comparison cie-lab --contrast 120` |
+| 10 | ![L10](./examples/logo-showcase/10-adaptive-blueprint.png) | `--mode bw --algorithm adaptive-threshold --black-color "#0b1d51" --white-color "#ffffff"` |
+| 11 | ![L11](./examples/logo-showcase/11-thermal-paper.png) | `--mode bw --algorithm ordered--hatchHorizontal-4 --black-color "#111111" --white-color "#f5f1e8" --contrast 130` |
+| 12 | ![L12](./examples/logo-showcase/12-metallic-burkes.png) | `--mode color --algorithm burkes --custom-colors "#0d1b2a,#415a77,#e0e1dd,#ffd166" --colors 4 --color-comparison cie-xyz --sharpen-before 1.6 --contrast 125` |
+
 ## Presets
 
 10 curated presets covering classic dither aesthetics:
