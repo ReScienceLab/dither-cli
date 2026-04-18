@@ -36,6 +36,16 @@ Source frame:
 
 ![20 result contact sheet](./cli/examples/showcase/contact-sheet.png)
 
+## Logo case
+
+Source logo:
+
+![Source logo](./cli/examples/logo-showcase/source-logo.png)
+
+12 logo-focused effect variations:
+
+![Logo contact sheet](./cli/examples/logo-showcase/contact-sheet.png)
+
 ## What's in this repo
 
 - `cli/` — npm package source, commands, presets, vendored dithermark worker/shared modules
